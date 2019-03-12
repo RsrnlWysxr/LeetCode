@@ -6,7 +6,7 @@
 所以返回 [0, 1] """
 
 
-class Solution(object):
+class Solution1(object):
     def twoSum(self, nums, target):
         """
         :type nums: List[int]
@@ -25,7 +25,23 @@ class Solution(object):
         return ret
 
 
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        numDict = {}
+        for i, num in enumerate(nums):
+            if (target - num) in numDict:
+                return [i, numDict[target-num]]
+            numDict[num] = i
+
+
 if __name__ == "__main__":
     nums = [3, 2, 4]
     ret = Solution().twoSum(nums, 6)
     print(ret)
+
+
