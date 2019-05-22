@@ -5,12 +5,12 @@ class Solution
 public:
     Solution()
     {
-        // heightVec = new vector<int>();
+        heightVec = new vector<int>();
     }
 
     int maxArea(vector<int> &height)
     {
-        heightVec = height;
+        *heightVec = height;
         int left = 0, right = height.size() - 1,
             ret = 0;
         while (right > left)
@@ -29,9 +29,9 @@ public:
 private:
     int CalculatingArea(int right, int left)
     {
-        return min(heightVec[left], heightVec[right]) * (right - left);
+        return min((*heightVec)[left], (*heightVec)[right]) * (right - left);
     }
 
 private:
-    vector<int> heightVec;
+    vector<int>* heightVec;
 };
