@@ -26,7 +26,6 @@ class Solution(object):
             ret += '-'
         ret += x_str[-1::-1].rstrip('-')
         ret = int(ret)
-        if -2 ** 31 < ret < 2 ** 31 - 1:
+        if -2**31 < ret < 2**31 - 1:
             return ret
         return 0
-            

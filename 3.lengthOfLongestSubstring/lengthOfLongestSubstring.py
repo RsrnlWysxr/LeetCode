@@ -15,3 +15,6 @@ class Solution(object):
             ret = max(ret, i - start + 1)
             record[s[i]] = i
         return ret
+
+# 对于record和start的理解:
+# 记录所有字符到索引的映射, 但是start后的record才有效
